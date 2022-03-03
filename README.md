@@ -10,7 +10,7 @@ It utilizes LoadRunner Cloud [Public APIs](https://loadrunner-cloud.saas.microfo
 ### Installation
 
 ```bash
-npm install -g --no-save --production https://github.com/weisun10/lrcrunner/releases/download/1.0.4/lrcrunner-1.0.4.tgz
+npm install -g --no-save --production https://github.com/MicroFocus/lrcrunner
 ```
 ### Usage
 
