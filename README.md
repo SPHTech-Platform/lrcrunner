@@ -43,7 +43,7 @@ scenarios:
     runTest: true          # run created test. ignored when testId is specified
     detach: false          # don't wait until test run is completed
     downloadReport: true   # download report after test run
-    reportType: pdf        # pdf, csv, docx (default: pdf). to download multiple report, use an array. for example: [csv, pdf]
+    reportType: pdf        # pdf, csv, docx, error-csv, raw-transactions (default: pdf). to download multiple report, use an array. for example: [csv, pdf]
     settings:
       description: my test # test description
       licenseMode: 0 # license modes: "VUH": 0, "VU": 1, "Mixed VU / VUH": 2
