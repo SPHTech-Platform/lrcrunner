@@ -1,7 +1,7 @@
 {
   "name": "lrcrunner",
   "version": "1.0.4",
-  "description": "test executor for LoadRunner Cloud",
+  "description": "Command line test runner for LoadRunner Cloud",
   "main": "index.js",
   "author": "Micro Focus or one of its affiliates",
   "license": "MIT",
