@@ -1,6 +1,8 @@
+[![CodeQL](https://github.com/MicroFocus/lrcrunner/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/MicroFocus/lrcrunner/actions/workflows/codeql-analysis.yml)
+
 # Command line test runner for LoadRunner Cloud
 
-You can use the tool to configure test, run test and download reports.
+You can use the tool to configure test, run test and download reports.  
 It utilizes LoadRunner Cloud [Public APIs](https://admhelp.microfocus.com/lrc/en/Latest/Content/Storm/PublicAPIs.htm).
 
 ### Requirements
