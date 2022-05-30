@@ -1,6 +1,6 @@
 {
   "name": "lrcrunner",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Command line test runner for LoadRunner Cloud",
   "main": "index.js",
   "author": "Micro Focus or one of its affiliates",
@@ -30,7 +30,8 @@
     "js-yaml": "4.1.0",
     "lodash": "4.17.21",
     "tunnel": "0.0.6",
-    "winston": "3.3.3"
+    "winston": "3.3.3",
+    "xmlbuilder": "15.1.1"
   },
   "devDependencies": {
     "eslint": "8.15.0",

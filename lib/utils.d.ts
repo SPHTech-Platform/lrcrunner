@@ -35,6 +35,8 @@ export function loadAndCheckTestOpts(testOpts: any, logger: any): Promise<{
 }>;
 export function isOptionEnabled(option: any): boolean;
 export function getDashboardUrl(urlObject: any, tenant: any, projectId: any, runId: any, isLocalTesting: any): string;
+export function getReportUrl(urlObject: any, tenant: any, projectId: any, runId: any, isLocalTesting: any): string;
 export function validateReportType(reportTypes: any): any;
 export function createLogger(): winston.Logger;
+export function generateJUnitXmlReport(any): Promise<any>;
 //# sourceMappingURL=utils.d.ts.map

@@ -72,26 +72,41 @@ const run = async () => {
     await client.authClient({ client_id, client_secret });
   }
 
+  const runData = {
+    urlObject: lrcURLObject,
+    tenant,
+    projectId,
+    artifacts_folder,
+    isLocalTesting,
+  };
+
   if (testId) {
     // process #1: run existing test
 
     logger.info(`test id: ${testId}`);
     const test = await client.getTest(projectId, testId);
-    logger.info(`running test: "${test.name}" ...`);
+    runData.testName = test.name;
+    runData.testId = test.id;
+
+    logger.info(`running test: "${runData.testName}" ...`);
 
     // run test
     const currRun = await client.runTest(projectId, testId);
-    logger.info(`run id: ${currRun.runId}, url: ${utils.getDashboardUrl(lrcURLObject, tenant, projectId, currRun.runId, isLocalTesting)}`);
+    runData.runId = currRun.runId;
+    logger.info(`run id: ${runData.runId}, url: ${utils.getDashboardUrl(lrcURLObject, tenant, projectId, runData.runId, isLocalTesting)}`);
 
     // run status and report
-    await client.getRunStatusAndResultReport(currRun.runId, downloadReport, reportTypes, artifacts_folder);
+    await client.getRunStatusAndResultReport(runData.runId, downloadReport, reportTypes, artifacts_folder);
   } else {
     // process #2: create new test
 
     // create test
     logger.info(`going to create test: ${name}`);
     const newTest = await client.createTest(projectId, { name });
-    logger.info(`created test. id: ${newTest.id}, name: ${newTest.name}`);
+    runData.testName = newTest.name;
+    runData.testId = newTest.id;
+
+    logger.info(`created test. id: ${runData.testId}, name: ${runData.testName}`);
 
     // test settings
     logger.info('retrieving test settings');
@@ -161,17 +176,26 @@ const run = async () => {
       logger.info('"runTest" flag is not enabled. exit');
       return;
     }
-    logger.info(`running test: ${newTest.name} ...`);
-    const currRun = await client.runTest(projectId, newTest.id);
-    logger.info(`run id: ${currRun.runId}, url: ${utils.getDashboardUrl(lrcURLObject, tenant, projectId, currRun.runId, isLocalTesting)}`);
+    logger.info(`running test: ${runData.testName} ...`);
+    const currRun = await client.runTest(projectId, runData.testId);
+    runData.runId = currRun.runId;
+    logger.info(`run id: ${runData.runId}, url: ${utils.getDashboardUrl(lrcURLObject, tenant, projectId, runData.runId, isLocalTesting)}`);
     if (detach) {
       logger.info('"detach" flag is enabled. exit');
       return;
     }
 
     // run status and report
-    await client.getRunStatusAndResultReport(currRun.runId, downloadReport, reportTypes, artifacts_folder);
+    await client.getRunStatusAndResultReport(runData.runId, downloadReport, reportTypes, artifacts_folder);
   }
+
+  const testRunData = await client.getTestRun(runData.runId);
+
+  runData.uiStatus = testRunData.uiStatus;
+  runData.startTime = parseInt(testRunData.startTime, 10) || 0;
+  runData.endTime = parseInt(testRunData.endTime, 10) || 0;
+
+  await utils.generateJUnitXmlReport(runData);
 
   logger.info('done');
 };
