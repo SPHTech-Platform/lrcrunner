@@ -39,4 +39,5 @@ export function getReportUrl(urlObject: any, tenant: any, projectId: any, runId:
 export function validateReportType(reportTypes: any): any;
 export function createLogger(): winston.Logger;
 export function generateJUnitXmlReport(any): Promise<any>;
+export function getFileExtensionByReportType(reportType: string): string;
 //# sourceMappingURL=utils.d.ts.map
