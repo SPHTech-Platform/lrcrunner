@@ -2,7 +2,7 @@
 
 # Command line test runner for LoadRunner Cloud
 
-This command line tool allows you to easily create / configure test, run test and download reports.  
+This tool allows you to easily create / configure test, run test and download reports.  
 It utilizes LoadRunner Cloud's [Public APIs](https://admhelp.microfocus.com/lrc/en/Latest/Content/Storm/PublicAPIs.htm).
 
 ### Requirements
