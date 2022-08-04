@@ -33,7 +33,7 @@ declare class Client {
     credentials: {};
     token: any;
     getTest(projectId: any, testId: any): Promise<any>;
-    runTest(projectId: any, testId: any): Promise<any>;
+    runTest(projectId: any, testId: any, initiator?: string): Promise<any>;
     getTestRunStatus(runId: any): Promise<any>;
     getTestRun(runId: any): Promise<any>;
     getTestRunStatusPolling(runId: any, time?: number): Promise<any>;
