@@ -68,6 +68,7 @@ const run = async () => {
 
   // start main progress
   const client = new Client(tenant, lrcURLObject, proxy, logger);
+  await client.init();
   if (!isLocalTesting) {
     await client.authClient({ client_id, client_secret });
   }

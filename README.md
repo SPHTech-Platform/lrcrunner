@@ -7,7 +7,7 @@ It utilizes LoadRunner Cloud's [Public APIs](https://admhelp.microfocus.com/lrc/
 
 ### Requirements
 
-* [**Node.js** `v12`](https://nodejs.org/en/download/) or higher must be installed to run this program. Latest LTS version is recommended.
+* [**Node.js** `v16`](https://nodejs.org/en/download/) or higher must be installed to run this program. Latest LTS version is recommended.
 
 ### Installation
 
