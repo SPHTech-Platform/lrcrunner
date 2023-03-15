@@ -9,7 +9,7 @@ declare class Client {
         host: string;
         port: string;
     };
-    init(): Promise<void>;
+    init(gotModule?: any): Promise<void>;
     _client: any;
     getDefaultOptions(): {
         prefixUrl: any;
