@@ -24,7 +24,19 @@ export declare function loadAndCheckTestOpts(testOpts: any, logger: any): Promis
     loadGenerators: any;
 }>;
 export declare function isOptionEnabled(option: any): boolean;
-export declare function generateJUnitXmlReport(runData: any): Promise<void>;
+export declare function generateJUnitXmlReport(runData: {
+    urlObject: any,
+    tenant: any,
+    projectId: any,
+    runId: any,
+    testId: any,
+    testName: any,
+    artifacts_folder: any,
+    isLocalTesting: any,
+    uiStatus: any,
+    startTime: any,
+    endTime: any,
+}): Promise<void>;
 export declare function validateReportType(reportTypes: any): any;
 export declare function getFileExtensionByReportType(reportType: any): any;
 export declare function createLogger(): winston.Logger;

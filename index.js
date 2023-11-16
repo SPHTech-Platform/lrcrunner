@@ -196,7 +196,7 @@ const run = async () => {
   runData.startTime = parseInt(testRunData.startTime, 10) || 0;
   runData.endTime = parseInt(testRunData.endTime, 10) || 0;
 
-  await utils.generateJUnitXmlReport(runData);
+  await client.generateJUnitXmlReport(runData);
 
   logger.info('done');
 };

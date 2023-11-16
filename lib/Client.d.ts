@@ -42,6 +42,14 @@ declare class Client {
     checkTestRunReport(reportId: any): Promise<any>;
     getTestRunReportPolling(name: any, reportId: any, time?: number): Promise<any>;
     getRunStatusAndResultReport(runId: any, downloadReport: any, reportTypes: any, artifacts_folder: any): Promise<any>;
+
+    generateJUnitXmlReport(runData: {
+        isLocalTesting: boolean,
+        artifacts_folder: (any | string),
+        urlObject: URL,
+        projectId: any,
+        tenant: (any)
+    }): Promise<any>;
 }
 import { URLSearchParams } from "url";
 //# sourceMappingURL=Client.d.ts.map
