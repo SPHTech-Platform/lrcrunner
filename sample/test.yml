@@ -1,0 +1,17 @@
+scenarios:
+  test:
+    projectId: 117         # project Id
+    testId: 2126           # run existing test instead of creating new one
+    name: demo test        # test name
+    runTest: true          # run created test. ignored when testId is specified
+    detach: false          # don't wait until test run is completed
+    downloadReport: true   # download report after test run
+    reportType: pdf        # pdf, csv, docx (default: pdf). to download multiple report, use an array. for example: [csv, pdf]
+
+modules:
+  lrc:
+    tenant: 652261341    # LRC tenant id
+
+settings:
+  proxy:
+    address: http://15.122.63.30:8080  # specify web proxy if it's needed
