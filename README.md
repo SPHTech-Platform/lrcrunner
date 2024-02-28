@@ -1,4 +1,4 @@
-[![CodeQL](https://github.com/MicroFocus/lrcrunner/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/MicroFocus/lrcrunner/actions/workflows/codeql-analysis.yml)
+[![CodeQL](https://github.com/MicroFocus/lrcrunner/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/MicroFocus/lrcrunner/actions/workflows/codeql.yml)
 
 # Command line test runner for LoadRunner Cloud
 
