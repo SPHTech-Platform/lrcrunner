@@ -1,40 +1,40 @@
 scenarios:
   test:
-    projectId: 5           # project Id
+    projectId: 5 # project Id
     #testId: 11            # run existing test instead of creating new one
-    name: Nirmal test        # test name
-    runTest: true          # run created test. ignored when testId is specified
-    detach: false          # don't wait until test run is completed
-    downloadReport: true   # download report after test run
-    reportType: pdf        # pdf, csv, docx, error-csv, raw-transactions (default: pdf). to download multiple report, use an array. for example: [csv, pdf]
+    name: Nirmal test # test name
+    runTest: true # run created test. ignored when testId is specified
+    detach: false # don't wait until test run is completed
+    downloadReport: true # download report after test run
+    reportType: pdf # pdf, csv, docx, error-csv, raw-transactions (default: pdf). to download multiple report, use an array. for example: [csv, pdf]
     settings:
       description: For CLI TEST # test description
       licenseMode: 0 # license modes: "VUH": 0, "VU": 1, "Mixed VU / VUH": 2
-      runMode: 1     # run modes: "Duration": 0, "Iterations": 1, "Goal Oriented": 2
+      runMode: 1 # run modes: "Duration": 0, "Iterations": 1, "Goal Oriented": 2
     scripts:
-      - vusersNum: 2                    
-        path: ./demo/skip_cdn-st-web-lrc.jmx.zip     # path to your script
+      - vusersNum: 2
+        path: ./demo/demo.jmx.zip # path to your script
         #id: 1                           # use existing script
         startTime: 0
-        schedulingMode: simple           # simple , manual , advanced
+        schedulingMode: simple # simple , manual , advanced
         rampUp:
-          duration: 60    # seconds
+          duration: 60 # seconds
           interval: 0
-          vusers: 1       # Mins
-        duration: 10 
+          vusers: 1 # Mins
+        duration: 10
         tearDown:
-          duration: 60    # seconds
+          duration: 60 # seconds
           interval: 0
           vusers: 1
         locationType: 0 # 0: Cloud; 1: On-Premise
-        iterations: 5   #
+        iterations: 5 #
         maxDuration: 300
-    
-      - vusersNum: 2                    
-        path: ./demo/skip_cdn-st-web-lrc.jmx.zip     # path to your script
+
+      - vusersNum: 2
+        path: ./demo/demo.jmx.zip # path to your script
         #id: 1                           # use existing script
         startTime: 0
-        schedulingMode: simple           # simple , manual , advanced
+        schedulingMode: simple # simple , manual , advanced
         rampUp:
           duration: 60
           interval: 0
@@ -45,23 +45,23 @@ scenarios:
           interval: 0
           vusers: 1
         locationType: 0 # 0: Cloud; 1: On-Premise
-        iterations: 5   #
+        iterations: 5 #
         maxDuration: 300
-    
-    distributions:              # specify Vusers distributions for Cloud
-    - locationName: aws-ap-southeast-1
-      vusersPercent: 80 # (%)
-    - locationName: aws-us-east-1
-      vusersPercent: 20 # (%)
-      
+
+    distributions: # specify Vusers distributions for Cloud
+      - locationName: aws-ap-southeast-1
+        vusersPercent: 80 # (%)
+      - locationName: aws-us-east-1
+        vusersPercent: 20 # (%)
+
     # loadGenerators:             # on-premises load generators
     # - 03ff1bff9d8653d24451      # assign on-premises load generator to test by its key
     # - 88dded94103e71343fca
-      
+
 # modules:
 #   lrc:
-#     #tenant: 695831988    # LRC tenant id 
-      
+#     #tenant: 12345678    # LRC tenant id
+
 settings:
   proxy:
-    #address: http://<PROXY HOST>:<PROXY PORT>  # specify web proxy if it's needed      
+    #address: http://<PROXY HOST>:<PROXY PORT>  # specify web proxy if it's needed
