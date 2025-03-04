@@ -133,7 +133,8 @@ const run = async () => {
       const testScript = await client.addTestScript(projectId, newTest.id, { scriptId });
       logger.info(`added script ${scriptId} into test`);
       testScript.loadTestScriptId = testScript[0].id;
-      const currTestScript = await client.updateTestScript(projectId, newTest.id, _.merge(testScript, script));
+      const json = { ...testScript, ...script };
+      const currTestScript = await client.updateTestScript(projectId, newTest.id, json);
       allTestScripts.push(currTestScript);
       logger.info('updated test script settings');
     }
