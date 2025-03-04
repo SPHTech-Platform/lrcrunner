@@ -29,7 +29,14 @@ Options:
   -s, --client_secret [client secret]  LRC client secret
   -t, --tenant [tenant id]             LRC tenant id
   -h, --help                           display help for command
+
 ```
+
+Example command for SPH account:
+```bash
+lrcrunner -r demo/myTest.yml -u https://loadrunner-cloud.saas.microfocus.com -i <ID> -s <Secret> -t 695831988
+```
+
 
 Above client id and client secret can also be specified via environment variables: LRC_CLIENT_ID and LRC_CLIENT_SECRET.  
 Refer to https://admhelp.microfocus.com/lrc/en/Latest/Content/Storm/Admin-APIAccess.htm for details about API access
